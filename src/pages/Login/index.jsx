@@ -7,7 +7,7 @@ import styles from "./style.module.scss";
 import { loginSchema } from "../../components/input/LoginSchema";
 import { api } from "../../services/api";
 
-export const LoginPage = ({setUserInfo}) => {
+export const LoginPage = ({ setUserInfo }) => {
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: zodResolver(loginSchema),
     });

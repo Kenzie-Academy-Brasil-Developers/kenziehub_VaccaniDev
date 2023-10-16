@@ -20,12 +20,12 @@ export const RegisterPage = () => {
             await api.post('/users', formData);
             toast.success("Conta criada com sucesso!", {
                 toastId: "success"
-              });
+            });
             navigate("/");
         } catch (error) {
             toast.error("Ops! Algo deu errado.", {
                 toastId: "error"
-              })
+            })
         }
     }
 

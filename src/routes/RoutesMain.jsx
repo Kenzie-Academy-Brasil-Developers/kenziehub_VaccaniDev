@@ -6,13 +6,12 @@ import { LoginPage } from "../pages/Login";
 
 export const RoutesMain = () => {
     const [userInfo, setUserInfo] = useState({});
-    console.log(userInfo)
 
-    return(
+    return (
         <Routes>
-            <Route path="/" element={<LoginPage setUserInfo={setUserInfo}/>}/>
-            <Route path="/register" element={<RegisterPage />}/>
-            <Route path="/dashboard" element={<DashBoardPage userInfo={userInfo}/>}/>
+            <Route path="/" element={<LoginPage setUserInfo={setUserInfo} />} />
+            <Route path="/register" element={<RegisterPage />} />
+            <Route path="/dashboard" element={<DashBoardPage userInfo={userInfo} />} />
         </Routes>
     )
 }
