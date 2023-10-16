@@ -10,6 +10,9 @@
     border: 1px solid var(--primary);
     background: var(--primary);
 }
+.buttonLogin:hover{
+    background-color: var(--primary-focus);
+}
 
 .buttonRegister {
     display: flex;
@@ -22,6 +25,9 @@
     border-radius: 0.30rem;
     border: 1px solid var(--grey-3);
     background: var(--grey-1);
+}
+.buttonRegister:hover{
+    background-color: var(--grey-2);
 }
 
 .buttonSendRegis {
@@ -48,6 +54,9 @@
     background: var(--grey-3);
     border: 1px solid var(--grey-3);
     // color: var(--grey-0);
+}
+.buttonBack:hover {
+    background-color: var(--grey-2);
 }
 
 .buttonExit{

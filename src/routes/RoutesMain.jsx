@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router-dom";
-import { LoginPage } from "../pages/login";
 import { RegisterPage } from "../pages/Register";
 import { DashBoardPage } from "../pages/Dashboard";
 import { useState } from "react";
+import { LoginPage } from "../pages/Login";
 
 export const RoutesMain = () => {
     const [userInfo, setUserInfo] = useState({});
