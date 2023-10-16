@@ -1,0 +1,33 @@
+.sectionDashBoard {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  flex-direction: column;
+
+  .header {
+    display: flex;
+    width: 100%;
+    padding: 1.5rem 10%;
+    border-bottom: 0.5px solid var(--grey-2);
+    justify-content: space-between;
+  }
+  .profile {
+    align-items: center;
+    display: flex;
+    width: 100%;
+    padding: 4rem 10%;
+    border-bottom: 0.5px solid var(--grey-2);
+    justify-content: space-between;
+    p{
+      color: var(--grey-1)
+    }
+  }
+  .content {
+    display: flex;
+    width: 100%;
+    padding: 1.5rem 10%;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}

@@ -1,0 +1,30 @@
+:root {
+    --primary: #FF577F;
+    --primary-focus: #FF427F;
+    --primary-negative: #59323F;
+
+    --grey-4: #121214;
+    --grey-3: #212529;
+    --grey-2: #343B41;
+    --grey-1: #868E96;
+    --grey-0: #F8F9FA;
+
+    --success: #3FE864;
+    --negative: #E83F5B;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color:white;
+    background-color: var(--grey-4);
+}
+
+.Toastify__toast-container {
+    --toastify-icon-color-success: var(--success);
+    --toastify-toast-width: 320px;
+    --toastify-color-dark: var(--grey-2);
+    --toastify-icon-color-error: var(--negative);
+    --toastify-color-progress-error: var(--negative);
+    --toastify-icon-color-success: var(--success);
+    --toastify-color-progress-success: var(--success);
+}
