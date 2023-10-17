@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import styles from "./style.module.scss";
 import { loginSchema } from "../../components/input/LoginSchema";
 import { api } from "../../services/api";
+import { toast } from 'react-toastify';
 
 export const LoginPage = ({ setUserInfo }) => {
     const { register, handleSubmit, formState: { errors } } = useForm({
@@ -22,6 +23,9 @@ export const LoginPage = ({ setUserInfo }) => {
             })
             navigate("/dashboard")
         } catch (error) {
+            toast.error("Email ou senha incorreta.", {
+                toastId: "error"
+            })
             console.log(error);
         }
     }
@@ -45,7 +49,7 @@ export const LoginPage = ({ setUserInfo }) => {
                     <button className="title2 buttonLogin" type="submit">Entrar</button>
                 </form>
                 <p className="headline">Ainda não possui uma conta?</p>
-                <button className="title2 buttonRegister" onClick={() => { navigate("/register") }}>Cadastre-se</button>
+                <a className="title2 buttonRegister" href="/register">Cadastre-se</a>
             </div>
         </section>
     )

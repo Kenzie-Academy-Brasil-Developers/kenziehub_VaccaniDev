@@ -34,12 +34,11 @@ export const RegisterPage = () => {
         userRegister(formData);
     };
 
-
     return (
         <section className={styles.sectionRegister}>
             <div className={styles.header}>
                 <img src={logo} alt="Logo" />
-                <button className="buttonBack paragraph" onClick={() => { navigate("/") }}>Voltar</button>
+                <a className="buttonBack paragraph" href="/">Voltar</a>
             </div>
             <div className={styles.divForm}>
                 <h1 className="title1">Crie sua conta</h1>
@@ -53,8 +52,13 @@ export const RegisterPage = () => {
                     <Input label="Contato" type="text" placeholder="Opção de contato" {...register("contact")} error={errors.contact} />
                     <label className="headline">
                         Selecionar módulo
-                        <select {...register("course_module")}>
+                        <select required {...register("course_module")}>
                             <option value="Primeiro módulo" className="title2">Primeiro Módulo</option>
+                            <option value="Segundo Módulo" className="title2">Segundo Módulo</option>
+                            <option value="Terceiro módulo" className="title2">Terceiro Módulo</option>
+                            <option value="Quarto módulo" className="title2">Quarto Módulo</option>
+                            <option value="Quinto módulo" className="title2">Quinto Módulo</option>
+                            <option value="Sexto módulo" className="title2">Sexto Módulo</option>
                         </select>
                     </label>
                     <button className="title2 buttonSendRegis" type="submit">Cadastrar</button>
