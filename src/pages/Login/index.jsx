@@ -1,12 +1,13 @@
 import logo from "../../assets/logo.svg";
 import { useForm } from "react-hook-form";
 import { Input } from "../../components/input";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
 import styles from "./style.module.scss";
 import { loginSchema } from "../../components/input/LoginSchema";
 import { api } from "../../services/api";
 import { toast } from 'react-toastify';
+import { useLocation } from "react-router-dom";
 
 export const LoginPage = ({ setUserInfo }) => {
     const { register, handleSubmit, formState: { errors } } = useForm({
@@ -29,6 +30,9 @@ export const LoginPage = ({ setUserInfo }) => {
             console.log(error);
         }
     }
+    const location = useLocation();
+
+    const urlAtual = location.pathname;
 
     const navigate = useNavigate()
 
@@ -49,7 +53,7 @@ export const LoginPage = ({ setUserInfo }) => {
                     <button className="title2 buttonLogin" type="submit">Entrar</button>
                 </form>
                 <p className="headline">Ainda não possui uma conta?</p>
-                <a className="title2 buttonRegister" href="/register">Cadastre-se</a>
+                <Link className="title2 buttonRegister" to="/register">Cadastre-se</Link>
             </div>
         </section>
     )
