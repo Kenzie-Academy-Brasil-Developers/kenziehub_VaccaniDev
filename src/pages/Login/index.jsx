@@ -7,7 +7,6 @@ import styles from "./style.module.scss";
 import { loginSchema } from "../../components/input/LoginSchema";
 import { api } from "../../services/api";
 import { toast } from 'react-toastify';
-import { useLocation } from "react-router-dom";
 
 export const LoginPage = ({ setUserInfo }) => {
     const { register, handleSubmit, formState: { errors } } = useForm({
@@ -30,9 +29,6 @@ export const LoginPage = ({ setUserInfo }) => {
             console.log(error);
         }
     }
-    const location = useLocation();
-
-    const urlAtual = location.pathname;
 
     const navigate = useNavigate()
 
