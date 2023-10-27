@@ -1,33 +1,17 @@
 import { useForm } from "react-hook-form";
 import { Input } from "../../components/input";
-import { useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { formSchema } from "../../components/input/formSchema";
-import { api } from "../../services/api";
 import styles from "./style.module.scss";
-import { toast } from 'react-toastify';
+import { useContext } from "react";
+import { KenzieContext } from "../../providers/Context";
 
 export const RegisterPage = () => {
+    const { userRegister } = useContext(KenzieContext);
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: zodResolver(formSchema),
     });
-
-    const navigate = useNavigate()
-
-    const userRegister = async (formData) => {
-        try {
-            await api.post('/users', formData);
-            toast.success("Conta criada com sucesso!", {
-                toastId: "success"
-            });
-            navigate("/");
-        } catch (error) {
-            toast.error("Ops! Algo deu errado.", {
-                toastId: "error"
-            })
-        }
-    }
 
     const submit = (formData) => {
         delete formData.confirmPassword

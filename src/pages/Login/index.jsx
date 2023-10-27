@@ -1,36 +1,18 @@
 import logo from "../../assets/logo.svg";
+import styles from "./style.module.scss";
 import { useForm } from "react-hook-form";
 import { Input } from "../../components/input";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
-import styles from "./style.module.scss";
 import { loginSchema } from "../../components/input/LoginSchema";
-import { api } from "../../services/api";
-import { toast } from 'react-toastify';
+import { KenzieContext } from "../../providers/Context";
+import { useContext } from "react";
 
-export const LoginPage = ({ setUserInfo }) => {
+export const LoginPage = () => {
+    const { userLogin } = useContext(KenzieContext);
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: zodResolver(loginSchema),
     });
-
-    const userLogin = async (formData) => {
-        try {
-            const { data } = await api.post('/sessions', formData);
-            localStorage.setItem("@TOKEN", data.token);
-            setUserInfo({
-                name: data.user.name,
-                module: data.user.course_module
-            })
-            navigate("/dashboard")
-        } catch (error) {
-            toast.error("Email ou senha incorreta.", {
-                toastId: "error"
-            })
-            console.log(error);
-        }
-    }
-
-    const navigate = useNavigate()
 
     const submit = (formData) => {
         userLogin(formData);

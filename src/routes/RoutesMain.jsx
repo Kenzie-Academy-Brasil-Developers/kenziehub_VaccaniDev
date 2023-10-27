@@ -1,17 +1,18 @@
 import { Route, Routes } from "react-router-dom";
-import { RegisterPage } from "../pages/Register";
+import { ProtectedRoutes } from "../components/ProtectedRoutes";
 import { DashBoardPage } from "../pages/Dashboard";
-import { useState } from "react";
 import { LoginPage } from "../pages/Login";
+import { RegisterPage } from "../pages/Register";
 
 export const RoutesMain = () => {
-    const [userInfo, setUserInfo] = useState({});
 
     return (
         <Routes>
-            <Route path="/" element={<LoginPage setUserInfo={setUserInfo} />} />
+            <Route path="/" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
-            <Route path="/dashboard" element={<DashBoardPage userInfo={userInfo} />} />
+            <Route path="/dashboard" element={<ProtectedRoutes />}>
+                <Route index element={<DashBoardPage />} />
+            </Route>
         </Routes>
     )
 }
