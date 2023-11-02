@@ -10,6 +10,10 @@
     padding: 1.5rem 10%;
     border-bottom: 0.5px solid var(--grey-2);
     justify-content: space-between;
+
+    button:hover {
+      background-color: var(--grey-2);
+    }
   }
 
   .profile {
@@ -33,15 +37,35 @@
     flex-direction: column;
     gap: 1.5rem;
   }
+
+  .techs {
+    display: flex;
+    justify-content: space-between;
+
+    button {
+      background-color: var(--grey-5);
+      border: none;
+    }
+
+    button:hover {
+      opacity: 0.6;
+    }
+  }
 }
 
 @media (max-width: 820px) {
+
+  .header,
+  .profile,
+  .content {
+    padding: 1.5rem 5% !important;
+  }
+
   .profile {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
     justify-content: flex-start;
     align-items: flex-start !important;
-    padding: 2rem 10% !important;
   }
 }

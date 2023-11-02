@@ -1,6 +1,5 @@
 import { ToastContainer } from "react-toastify";
 import { RoutesMain } from "./routes/RoutesMain";
-import { KenzieProvider } from './providers/Context.jsx';
 
 import "./styles/index.scss"
 import 'react-toastify/dist/ReactToastify.css';
@@ -8,7 +7,6 @@ import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (
     <>
-      <KenzieProvider>
         <RoutesMain />
         <ToastContainer
           position="top-right"
@@ -22,7 +20,6 @@ function App() {
           pauseOnHover
           theme="dark"
         />
-      </KenzieProvider>
     </>
   )
 }

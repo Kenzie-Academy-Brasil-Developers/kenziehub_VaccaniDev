@@ -1,0 +1,125 @@
+.createModal {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .3);
+
+    .modalBox {
+        border-radius: 6px;
+        width: 23.0625rem;
+        height: 20rem;
+        background-color: var(--grey-3);
+    }
+
+    .modalHeader {
+        border-radius: 6px 6px 0 0;
+        display: flex;
+        justify-content: space-between;
+        padding: 0.7rem 1.2rem;
+        background-color: var(--grey-2);
+
+        button {
+            background-color: var(--grey-2);
+            border: none;
+            color: var(--grey-1)
+        }
+    }
+
+    .modalForm {
+        padding: 1.2rem;
+        align-items: center;
+        width: 100%;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            width: 100%;
+            height: 100%;
+
+        }
+
+        input {
+            min-width: 100%;
+            width: 100%;
+            height: 3rem;
+            padding: 1.25rem 0.87rem;
+            align-items: center;
+            gap: 0.6345rem;
+            border: 1.218px solid var(--grey-2);
+            border-radius: 0.25rem;
+            background: var(--grey-2, #343B41);
+            width: 19.4375rem;
+            height: 1.6875rem;
+            color: var(--grey-0, #F8F9FA);
+            font-size: 1.01519rem;
+            font-weight: 400;
+            line-height: 1.64963rem;
+        }
+
+        input:hover {
+            border: 1.218px solid var(--grey-0, #F8F9FA);
+        }
+
+        select {
+            min-width: 100%;
+            width: 100%;
+            border: none;
+            display: flex;
+            height: 3rem;
+            padding: 0rem 0.87rem;
+            align-items: center;
+            gap: 0.6345rem;
+            flex-shrink: 0;
+            border-radius: 0.25rem;
+            border: 1px solid var(--grey-2);
+            background: var(--grey-2);
+            color: white;
+            font-size: 16px;
+        }
+
+        select:hover {
+            border: 1.218px solid var(--grey-0, #F8F9FA);
+
+        }
+
+        button {
+            display: flex;
+            min-width: 100%;
+            width: 100%;
+            height: 3rem;
+            padding: 0rem 1.39588rem;
+            justify-content: center;
+            align-items: center;
+            gap: 0.6345rem;
+            border-radius: 0.25381rem;
+            border: 1.218px solid var(--color-primary, #FF577F);
+            background: var(--color-primary, #FF577F);
+        }
+
+        input,
+        select {
+            margin-top: 6px;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .modalBox {
+        border-radius: 6px;
+        width: 90% !important;
+        background-color: var(--grey-3);
+
+        input {
+            width: 100% !important;
+        }
+    }
+}

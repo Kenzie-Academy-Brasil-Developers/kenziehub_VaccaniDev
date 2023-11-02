@@ -2,9 +2,15 @@ import styles from "./style.module.scss";
 import logo from "../../assets/logo.svg";
 import { KenzieContext } from "../../providers/Context";
 import { useContext } from "react";
+import { TechList } from "./TechList";
+import createIcon from "../../assets/createTechIcon.svg";
+import { TechContext } from "../../providers/TechContext";
+import { CreateModal } from "./CreateModal";
+import { EditModal } from "./EditModal";
 
 export const DashBoardPage = () => {
     const { user, logout } = useContext(KenzieContext);
+    const { isOpen, setIsOpen, editing, techList } = useContext(TechContext);
 
     return (
         <section className={styles.sectionDashBoard}>
@@ -14,17 +20,19 @@ export const DashBoardPage = () => {
             </div>
             <div className={styles.profile}>
                 <h2 className="title1">{`Olá, ${user.name}`}</h2>
-                <p className="paragraph">{user.module}</p>
+                <p className="paragraph">{user.course_module}</p>
             </div>
             <div className={styles.content}>
-                <h2 className="title1">
-                    {`Que pena! Estamos em desenvolvimento :(`}
-                </h2>
-                <h3 className="paragraph">
-                    Nossa aplicação está em desenvolvimento, em breve teremos
-                    novidades
-                </h3>
+                <div className={styles.techs}>
+                    <h3 className="title1">Tecnologias</h3>
+                    <button onClick={() => setIsOpen(true)} ><img src={createIcon} alt="Create icon" /></button>
+                </div>
+                {techList.length >= 1 ? <div className="listContainer">
+                    <TechList />
+                </div> : null}
             </div>
+            {isOpen ? <CreateModal /> : null}
+            {editing ? <EditModal /> : null}
         </section>
     );
 };

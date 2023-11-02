@@ -1,0 +1,48 @@
+.ulSection {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--grey-3);
+    padding: 1.2rem 0;
+    border-radius: 6px;
+    gap: 0.75rem;
+
+    li {
+        margin: 0 1.2rem;
+        background-color: var(--grey-4);
+        border-radius: 6px;
+        display: flex;
+        justify-content: space-between;
+        height: 4rem;
+        align-items: center;
+        padding: 1rem;
+
+        div {
+            display: flex;
+            gap: 1rem;
+
+            button {
+                background: none;
+                border: none;
+            }
+
+            button:hover {
+                opacity: 0.6;
+            }
+        }
+    }
+}
+
+@media (max-width: 820px) {
+    .ulSection {
+
+        li {
+            height: 5rem;
+            display: block;
+
+            .buttonsDiv {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+}

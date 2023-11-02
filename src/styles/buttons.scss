@@ -12,7 +12,8 @@
     border: 1px solid var(--primary);
     background: var(--primary);
 }
-.buttonLogin:hover{
+
+.buttonLogin:hover {
     background-color: var(--primary-focus);
 }
 
@@ -30,7 +31,8 @@
     border: 1px solid var(--grey-3);
     background: var(--grey-1);
 }
-.buttonRegister:hover{
+
+.buttonRegister:hover {
     background-color: var(--grey-2);
 }
 
@@ -62,11 +64,12 @@
     background: var(--grey-3);
     border: 1px solid var(--grey-3);
 }
+
 .buttonBack:hover {
     background-color: var(--grey-2);
 }
 
-.buttonExit{
+.buttonExit {
     cursor: pointer;
     text-decoration: none;
     display: inline-flex;
